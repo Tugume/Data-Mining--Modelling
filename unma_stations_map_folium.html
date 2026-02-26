@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a836acbdc53c64d8e50305c957e8a764 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+             <div style="position: fixed; 
+                     top: 10px; left: 50px; width: 350px; height: 80px; 
+                     background-color: white; border:2px solid grey; z-index:9999; 
+                     font-size: 14px; padding: 10px; border-radius: 5px;
+                     box-shadow: 2px 2px 6px rgba(0,0,0,0.3);">
+             <b>UNMA Weather Stations Across Uganda</b><br>
+             <span style="font-size: 12px; color: #666;">Analysis Period: 2020-2025</span><br>
+             <span style="font-size: 11px;">Click markers for station details</span>
+             </div>
+             
+    
+            <div class="folium-map" id="map_a836acbdc53c64d8e50305c957e8a764" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a836acbdc53c64d8e50305c957e8a764 = L.map(
+                "map_a836acbdc53c64d8e50305c957e8a764",
+                {
+                    center: [0.7671292000000001, 32.3147378],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_507f050e5a03be43ce8f19819d5880b8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_507f050e5a03be43ce8f19819d5880b8.addTo(map_a836acbdc53c64d8e50305c957e8a764);
+        
+    
+            var marker_cluster_e7703b629fa3c8676d26643f7fca5221 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            marker_cluster_e7703b629fa3c8676d26643f7fca5221.addTo(map_a836acbdc53c64d8e50305c957e8a764);
+        
+    
+            var marker_a7b2f62f5e487fc3ebd40487ea53668b = L.marker(
+                [0.05, 32.46],
+                {
+}
+            ).addTo(map_a836acbdc53c64d8e50305c957e8a764);
+        
+    
+            var icon_25706265c84dcbd486cf228a51c8f1de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1c0e9fea756766da0f5df795b41004da = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_35d30cbbf4c4fb08c323cf3bdb604285 = $(`<div id="html_35d30cbbf4c4fb08c323cf3bdb604285" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 200px;">         <h4 style="margin: 10px 0; color: darkblue;"><b>Entebbe</b></h4>         <table style="width: 100%;">             <tr><td><b>Latitude:</b></td><td>0.0500°N</td></tr>             <tr><td><b>Longitude:</b></td><td>32.4600°E</td></tr>             <tr><td><b>Region:</b></td><td>Central</td></tr>             <tr><td><b>Elevation:</b></td><td>1180 m</td></tr>         </table>     </div>     </div>`)[0];
+                popup_1c0e9fea756766da0f5df795b41004da.setContent(html_35d30cbbf4c4fb08c323cf3bdb604285);
+            
+        
+
+        marker_a7b2f62f5e487fc3ebd40487ea53668b.bindPopup(popup_1c0e9fea756766da0f5df795b41004da)
+        ;
+
+        
+    
+    
+            marker_a7b2f62f5e487fc3ebd40487ea53668b.bindTooltip(
+                `<div>
+                     Entebbe
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a7b2f62f5e487fc3ebd40487ea53668b.setIcon(icon_25706265c84dcbd486cf228a51c8f1de);
+            
+    
+            var marker_7b90d5abf136c858e1f02821032dee34 = L.marker(
+                [0.5, 33.2],
+                {
+}
+            ).addTo(map_a836acbdc53c64d8e50305c957e8a764);
+        
+    
+            var icon_43b74bcdef051360d3cb4ae79d7ee104 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c04e70c52ea7e9a5ff0331c2f841c4b0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_61cfbcdb76bb0459069e3454c81dcd8c = $(`<div id="html_61cfbcdb76bb0459069e3454c81dcd8c" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 200px;">         <h4 style="margin: 10px 0; color: darkblue;"><b>Jinja</b></h4>         <table style="width: 100%;">             <tr><td><b>Latitude:</b></td><td>0.5000°N</td></tr>             <tr><td><b>Longitude:</b></td><td>33.2000°E</td></tr>             <tr><td><b>Region:</b></td><td>Eastern</td></tr>             <tr><td><b>Elevation:</b></td><td>1204 m</td></tr>         </table>     </div>     </div>`)[0];
+                popup_c04e70c52ea7e9a5ff0331c2f841c4b0.setContent(html_61cfbcdb76bb0459069e3454c81dcd8c);
+            
+        
+
+        marker_7b90d5abf136c858e1f02821032dee34.bindPopup(popup_c04e70c52ea7e9a5ff0331c2f841c4b0)
+        ;
+
+        
+    
+    
+            marker_7b90d5abf136c858e1f02821032dee34.bindTooltip(
+                `<div>
+                     Jinja
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7b90d5abf136c858e1f02821032dee34.setIcon(icon_43b74bcdef051360d3cb4ae79d7ee104);
+            
+    
+            var marker_04cdf9d1717d5781b6168b37f36182a3 = L.marker(
+                [2.830556, 32.320278],
+                {
+}
+            ).addTo(map_a836acbdc53c64d8e50305c957e8a764);
+        
+    
+            var icon_88715c7ca183c7b662bdd4945bbea145 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_557eafb67299a573480fd0258eb544e0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1d074906b49d3742201547d61b57aa6a = $(`<div id="html_1d074906b49d3742201547d61b57aa6a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 200px;">         <h4 style="margin: 10px 0; color: darkblue;"><b>Gulu</b></h4>         <table style="width: 100%;">             <tr><td><b>Latitude:</b></td><td>2.8306°N</td></tr>             <tr><td><b>Longitude:</b></td><td>32.3203°E</td></tr>             <tr><td><b>Region:</b></td><td>Northern</td></tr>             <tr><td><b>Elevation:</b></td><td>1100 m</td></tr>         </table>     </div>     </div>`)[0];
+                popup_557eafb67299a573480fd0258eb544e0.setContent(html_1d074906b49d3742201547d61b57aa6a);
+            
+        
+
+        marker_04cdf9d1717d5781b6168b37f36182a3.bindPopup(popup_557eafb67299a573480fd0258eb544e0)
+        ;
+
+        
+    
+    
+            marker_04cdf9d1717d5781b6168b37f36182a3.bindTooltip(
+                `<div>
+                     Gulu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_04cdf9d1717d5781b6168b37f36182a3.setIcon(icon_88715c7ca183c7b662bdd4945bbea145);
+            
+    
+            var marker_71b717531b90f6f5355bd44581b73ccd = L.marker(
+                [1.715, 33.611111],
+                {
+}
+            ).addTo(map_a836acbdc53c64d8e50305c957e8a764);
+        
+    
+            var icon_ee07d86932cd8336abc47baac662d89f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "brown",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_83cd4c636c96ab6097e7b45bd0aa9fd0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5f676a68655e3386fec04a8c547cff94 = $(`<div id="html_5f676a68655e3386fec04a8c547cff94" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 200px;">         <h4 style="margin: 10px 0; color: darkblue;"><b>Soroti</b></h4>         <table style="width: 100%;">             <tr><td><b>Latitude:</b></td><td>1.7150°N</td></tr>             <tr><td><b>Longitude:</b></td><td>33.6111°E</td></tr>             <tr><td><b>Region:</b></td><td>Eastern</td></tr>             <tr><td><b>Elevation:</b></td><td>1130 m</td></tr>         </table>     </div>     </div>`)[0];
+                popup_83cd4c636c96ab6097e7b45bd0aa9fd0.setContent(html_5f676a68655e3386fec04a8c547cff94);
+            
+        
+
+        marker_71b717531b90f6f5355bd44581b73ccd.bindPopup(popup_83cd4c636c96ab6097e7b45bd0aa9fd0)
+        ;
+
+        
+    
+    
+            marker_71b717531b90f6f5355bd44581b73ccd.bindTooltip(
+                `<div>
+                     Soroti
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_71b717531b90f6f5355bd44581b73ccd.setIcon(icon_ee07d86932cd8336abc47baac662d89f);
+            
+    
+            var marker_79385314dfe17212f96d71ae9e15e562 = L.marker(
+                [-1.25991, 29.9823],
+                {
+}
+            ).addTo(map_a836acbdc53c64d8e50305c957e8a764);
+        
+    
+            var icon_dd72d5d6a3dd5596cc67434b519493fe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e18f697facf278b69eba542592cc7d8c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_91bc1026861e7f56f46f6f55464345ef = $(`<div id="html_91bc1026861e7f56f46f6f55464345ef" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 200px;">         <h4 style="margin: 10px 0; color: darkblue;"><b>Kabale</b></h4>         <table style="width: 100%;">             <tr><td><b>Latitude:</b></td><td>-1.2599°N</td></tr>             <tr><td><b>Longitude:</b></td><td>29.9823°E</td></tr>             <tr><td><b>Region:</b></td><td>Southwestern</td></tr>             <tr><td><b>Elevation:</b></td><td>2000 m</td></tr>         </table>     </div>     </div>`)[0];
+                popup_e18f697facf278b69eba542592cc7d8c.setContent(html_91bc1026861e7f56f46f6f55464345ef);
+            
+        
+
+        marker_79385314dfe17212f96d71ae9e15e562.bindPopup(popup_e18f697facf278b69eba542592cc7d8c)
+        ;
+
+        
+    
+    
+            marker_79385314dfe17212f96d71ae9e15e562.bindTooltip(
+                `<div>
+                     Kabale
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_79385314dfe17212f96d71ae9e15e562.setIcon(icon_dd72d5d6a3dd5596cc67434b519493fe);
+            
+</script>
+</html>
